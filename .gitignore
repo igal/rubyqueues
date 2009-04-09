@@ -1,0 +1,12 @@
+activemq_stomp_eg/apache-activemq-*.*.*-bin.tar.gz
+activemq_stomp_eg/apache-activemq-*.*.*
+activemq_stomp_eg/data
+beanstalkd_eg/beanstalkd-*.*
+delayed_job_eg/rails_dj
+delayed_job_eg/delayed_job
+kestrel_eg/kestrel
+kestrel_eg/tmp
+memcacheq_eg/memcacheq-*.*
+memcacheq_eg/queue
+sparrow_eg/queue
+starling_eg/queue
