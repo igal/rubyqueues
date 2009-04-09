@@ -11,7 +11,7 @@ Using message queues effectively can significantly improve the efficiency and re
 Details
 -------
 
-* [Comparison table of message queues](./master/comparison.pdf)
+* [Comparison table of message queues](./raw/master/comparison.pdf)
 * [ActiveMQ with Stomp](./master/activemq_stomp_eg/)
 * [Beanstalkd](./master/beanstalkd_eg/)
 * [Delayed::Job](./master/delayed_job_eg/)
