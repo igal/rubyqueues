@@ -11,7 +11,7 @@ Using message queues effectively can significantly improve the efficiency and re
 Details
 -------
 
-* [Comparison table of message queues](../raw/master/comparison.pdf)
+* [Comparison table of message queues (PDF)](../raw/master/comparison.pdf)
 * [ActiveMQ with Stomp](./master/activemq_stomp_eg/)
 * [Beanstalkd](./master/beanstalkd_eg/)
 * [Delayed::Job](./master/delayed_job_eg/)
@@ -21,9 +21,9 @@ Details
 * [Sparrow](./master/sparrow_eg/)
 * [Starling](./master/starling_eg/)
 
-WARNINGS
---------
+Caveat emptor
+-------------
 
-I have not used most of these messaging systems outside this evaluation, so please perform your own evaluation before making an important decision. I'll gladly incorporate additional information and corrections you send me so that I can accurately represent each alternative. 
+I have not used most of these messaging systems outside this evaluation, so please perform your own analysis before making an important decision. I'll gladly incorporate additional information and corrections that you send me so that I can accurately represent each alternative.
 
 The naive benchmark does NOT acurately represent the performance of these systems under a realistic workload. This naive benchmark simply has a single client making sequential calls, whereas a realistic workload would include a large number of clients working in bursts. For example, Starling is much faster than Kestrel when talking to a few clients, while Kestrel is allegedly much faster than Starling when talking to a large number of clients.
