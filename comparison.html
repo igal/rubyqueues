@@ -5,214 +5,216 @@
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
     <style media="all" type="text/css">
       body {font-family:Arial,sans-serif}
-      table.comparison-table {
+      .comparison a[name] { color: inherit }
+      .comparison table {
         border-collapse: collapse; }
-      .comparison-table tr > th { text-align: right }
-      .comparison-table th,
-      .comparison-table td {
+      .comparison tr > th { text-align: right }
+      .comparison th,
+      .comparison td {
         vertical-align:top;
         border: 1px solid #DDDDDD;
         padding: 0.25em;
         white-space:nowrap; }
-      .comparison-table th { background-color: #E6E6E6; }
-      .comparison-table td {  background-color: #CBFFC9; }
-      .comparison-table td.caution { background-color: #FAFFC9; }
-      .comparison-table td.warning { background-color: #FFCAC9; }
+      .comparison th { background-color: #E6E6E6; }
+      .comparison td {  background-color: #CBFFC9; }
+      .comparison td.caution { background-color: #FAFFC9; }
+      .comparison td.warning { background-color: #FFCAC9; font-weight: normal; }
     </style>
   </head>
   <body>
+    <div class="comparison">
+      <h1>Comparison of message queues for Ruby</h1>
 
-    <h1>Comparison of message queues for Ruby</h1>
+      <p><a href="http://twitter.com/igalko">Igal Koshevoy</a>, updated 2009-04-14</p>
 
-    <p><a href="http://twitter.com/igalko">Igal Koshevoy</a>, updated 2009-04-09</p>
+      <p>
+        Using message queues effectively can significantly improve the efficiency and responsiveness of applications. Ruby programmers are lucky to have many messaging options to choose from, but are cursed with having to pick between them. This comparison table and <a href="http://github.com/igal/rubyqueues/tree/master">source code samples</a> attempt to provide basic information to help Ruby programmers better understand these alternatives:
+      </p>
 
-    <p>
-      Using message queues effectively can significantly improve the efficiency and responsiveness of applications. Ruby programmers are lucky to have many messaging options to choose from, but are cursed with having to pick between them. This comparison table and <a href="http://github.com/igal/rubyqueues/tree/master">source code samples</a> attempt to provide basic information to help Ruby programmers better understand these alternatives:
-    </p>
+      <table cellspacing="0">
+        <tr>
+          <th>Name</th>
+          <th>Delayed::Job</th>
+          <th>Kestrel</th>
+          <th>Starling</th>
+          <th>Sparrow</th>
+          <th>beanstalkd</th>
+          <th>memcacheq</th>
+          <th>RabbitMQ</th>
+          <th>ActiveMQ</th>
+        </tr>
+        <tr>
+          <th>Pure Ruby</th>
+          <td>Y</td>
+          <td class="caution">N (Java)</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td class="caution">N (C)</td>
+          <td class="caution">N (C)</td>
+          <td class="caution">N (Erlang)</td>
+          <td class="caution">N (Java)</td>
+        </tr>
 
-    <table class="comparison-table" cellspacing="0">
-      <tr>
-        <th>Name</th>
-        <th>Delayed::Job</th>
-        <th>Kestrel</th>
-        <th>Starling</th>
-        <th>Sparrow</th>
-        <th>beanstalkd</th>
-        <th>memcacheq</th>
-        <th>RabbitMQ</th>
-        <th>ActiveMQ</th>
-      </tr>
-      <tr>
-        <th>Pure Ruby</th>
-        <td>Y</td>
-        <td class="caution">N (Java)</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td class="caution">N (C)</td>
-        <td class="caution">N (C)</td>
-        <td class="caution">N (Erlang)</td>
-        <td class="caution">N (Java)</td>
-      </tr>
+        <tr>
+          <th>Trivial install</th>
+          <td>Y</td>
+          <td class="caution">N</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+        </tr>
 
-      <tr>
-        <th>Trivial install</th>
-        <td>Y</td>
-        <td class="caution">N</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-      </tr>
+        <tr>
+          <th>Trivial usage</th>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td class="warning">N</td>
+          <td class="warning">N</td>
+        </tr>
 
-      <tr>
-        <th>Trivial usage</th>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td class="warning">N</td>
-        <td class="warning">N</td>
-      </tr>
+        <tr>
+          <th>Daemon included</th>
+          <td class="caution">N</td>
+          <td class="caution">N</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+        </tr>
 
-      <tr>
-        <th>Daemon included</th>
-        <td class="caution">N</td>
-        <td class="caution">N</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-      </tr>
+        <tr>
+          <th>Standalone</th>
+          <td class="caution">N (Rails only)</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+        </tr>
 
-      <tr>
-        <th>Standalone</th>
-        <td class="caution">N (Rails only)</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-      </tr>
+        <tr>
+          <th>Reserve</th>
+          <td class="caution">N</td>
+          <td>Y</td>
+          <td class="caution">N</td>
+          <td class="caution">N</td>
+          <td>Y</td>
+          <td class="caution">N</td>
+          <td>Y</td>
+          <td>Y</td>
+        </tr>
 
-      <tr>
-        <th>Reserve</th>
-        <td class="caution">N</td>
-        <td>Y</td>
-        <td class="caution">N</td>
-        <td class="caution">N</td>
-        <td>Y</td>
-        <td class="caution">N</td>
-        <td>Y</td>
-        <td>Y</td>
-      </tr>
+        <tr>
+          <th>Persistent queues</th>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td class="warning">N</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+        </tr>
 
-      <tr>
-        <th>Persistent queues</th>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td class="warning">N</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-      </tr>
+        <tr>
+          <th>Lightweight checks</th>
+          <td class="caution">N (DB polling)</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+        </tr>
 
-      <tr>
-        <th>Lightweight checks</th>
-        <td class="caution">N (DB polling)</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-      </tr>
+        <tr>
+          <th>Memcache interface</th>
+          <td class="caution">N (database)</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td class="warning">N (custom)</td>
+          <td>Y</td>
+          <td class="caution">N (AMQP)</td>
+          <td class="caution">N (Stomp)</td>
+        </tr>
 
-      <tr>
-        <th>Memcache interface</th>
-        <td class="caution">N (database)</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td class="warning">N (custom)</td>
-        <td>Y</td>
-        <td class="caution">N (AMQP)</td>
-        <td class="caution">N (Stomp)</td>
-      </tr>
+        <tr>
+          <th>Benchmark<a href="#benchmark">[1]</a></th>
+          <td class="caution">216</td>
+          <td>893</td>
+          <td>2902</td>
+          <td>1182</td>
+          <td>3702</td>
+          <td class="caution">315</td>
+          <td>703</td>
+          <td class="caution">434</td>
+        </tr>
 
-      <tr>
-        <th>Benchmark<a href="#benchmark">[1]</a></th>
-        <td class="caution">216</td>
-        <td>893</td>
-        <td>2902</td>
-        <td>1182</td>
-        <td>3702</td>
-        <td class="caution">315</td>
-        <td>703</td>
-        <td class="caution">434</td>
-      </tr>
+        <tr>
+          <th>Praises</th>
+          <td>Easy w/ Rails</td>
+          <td>Parallel?</td>
+          <td>Simple</td>
+          <td>Simple</td>
+          <td>Fast</td>
+          <td class="warning">???</td>
+          <td>Power</td>
+          <td>Reliable</td>
+        </tr>
 
-      <tr>
-        <th>Praises</th>
-        <td>Easy w/ Rails</td>
-        <td>Parallel?</td>
-        <td>Simple</td>
-        <td>Simple</td>
-        <td>Fast</td>
-        <td class="warning">???</td>
-        <td>Power</td>
-        <td>Reliable</td>
-      </tr>
+        <tr>
+          <th>Annoyances</th>
+          <td class="caution">Slow, Rails only</td>
+          <td class="caution">Build :(</td>
+          <td class="caution">Pruning :(</td>
+          <td class="warning">Buggy</td>
+          <td class="warning">No persist</td>
+          <td class="caution">Slow</td>
+          <td class="caution">Complexity</td>
+          <td class="caution">Slowish</td>
+        </tr>
 
-      <tr>
-        <th>Annoyances</th>
-        <td class="caution">Slow, Rails only</td>
-        <td class="caution">Build :(</td>
-        <td class="caution">Pruning :(</td>
-        <td class="warning">Buggy</td>
-        <td class="warning">No persist</td>
-        <td class="caution">Slow</td>
-        <td class="caution">Complexity</td>
-        <td class="caution">Slowish</td>
-      </tr>
+        <tr>
+          <th>Recommended</th>
+          <td class="caution">For Rails</td>
+          <td class="caution">Maybe</td>
+          <td class="caution">Maybe</td>
+          <td class="warning">No</td>
+          <td class="warning">No</td>
+          <td class="warning">No</td>
+          <td>For complex</td>
+          <td>For stability</td>
+        </tr>
 
-      <tr>
-        <th>Recommended</th>
-        <td class="caution">For Rails</td>
-        <td class="caution">Maybe</td>
-        <td class="caution">Maybe</td>
-        <td class="warning">No</td>
-        <td class="warning">No</td>
-        <td class="warning">No</td>
-        <td>For complex</td>
-        <td>For stability</td>
-      </tr>
+      </table>
 
-    </table>
+      <br />
 
-    <br />
+      <table class="comparison-table">
+        <tr>
+          <th>Key</th>
+          <td>Yes</td>
+          <td class="caution">No, caution</td>
+          <td class="warning">No, warning</td>
+        </tr>
+      </table>
 
-    <table class="comparison-table">
-      <tr>
-        <th>Key</th>
-        <td>Yes</td>
-        <td class="caution">No, caution</td>
-        <td class="warning">No, warning</td>
-      </tr>
-    </table>
-
-    <p>
-      <a name="benchmark"><b>Benchmark</b> is a naive measure of sequential puts-gets per second and does NOT accurately represent how these systems will perform under a realistic load.</a>
-    </p>
+      <p>
+        <a name="benchmark"><b>Benchmark</b> is a naive measure of sequential puts-gets per second and does NOT accurately represent how these systems will perform under a realistic load.</a>
+      </p>
+    </div>
   </body>
 </html>
