@@ -1,7 +1,7 @@
 Ruby message queue showdown
 ===========================
 
-Last updated: 2009-04-09
+Updated: 2009-04-14
 
 Summary
 -------
@@ -11,7 +11,7 @@ Using message queues effectively can significantly improve the efficiency and re
 Details
 -------
 
-* [Comparison table of message queues](../raw/master/comparison.html)
+* [Comparison table of message queues](http://wiki.github.com/igal/rubyqueues)
 * [ActiveMQ with Stomp](./master/activemq_stomp_eg/)
 * [Beanstalkd](./master/beanstalkd_eg/)
 * [Delayed::Job](./master/delayed_job_eg/)
