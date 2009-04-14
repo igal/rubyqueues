@@ -6,7 +6,7 @@ Summary
 
 A pure Ruby message broker with a memcache interface.
 
-Websites: [Ruby server](http://rubyforge.org/projects/starling/) and [Ruby memcache-client](http://github.com/fiveruns/memcache-client/tree/master).
+Websites: [Starling server](http://rubyforge.org/projects/starling/) and [Ruby memcache-client](http://github.com/fiveruns/memcache-client/tree/master).
 
 PROS: Fast. Easy setup and use.
 

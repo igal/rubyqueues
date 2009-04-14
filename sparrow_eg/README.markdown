@@ -6,7 +6,7 @@ Summary
 
 A pure Ruby message broker with a memcache interface.
 
-Websites: [Ruby server](http://code.google.com/p/sparrow/) and [Ruby memcache-client](http://github.com/fiveruns/memcache-client/tree/master)
+Websites: [Sparrow server](http://code.google.com/p/sparrow/) and [Ruby memcache-client](http://github.com/fiveruns/memcache-client/tree/master)
 
 PROS: Easy setup and use.
 
