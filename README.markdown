@@ -1,7 +1,7 @@
 Ruby message queue showdown
 ===========================
 
-Updated: 2009-04-14
+Updated: 2009-04-17
 
 Summary
 -------
@@ -17,7 +17,7 @@ Details
 * [Delayed::Job](./master/delayed_job_eg/)
 * [Kestrel](./master/kestrel_eg/)
 * [MemcacheQ](./master/memcacheq_eg/)
-* [RabbitMQ with AMPQ](./master/rabbitmq_ampq_eg/)
+* [RabbitMQ with AMQP](./master/rabbitmq_ampq_eg/)
 * [Sparrow](./master/sparrow_eg/)
 * [Starling](./master/starling_eg/)
 
