@@ -10,7 +10,7 @@ Websites: [RabbitMQ server](http://www.rabbitmq.com/) and [Ruby 'tmm1-amqp' clie
 
 PROS: Many compatible clients and servers. Clusterable queue servers. Many subscription options. Multiple protocols (AMQP, STOMP, SMTP, etc).
 
-CONS: The RabbitMQ server is fine, but the tmm1-amqp client is slow (3X slower than Java AMQP client) and its event-driven API is tricky to work with.
+CONS: The RabbitMQ server is fine, but the tmm1-amqp client uses an event-driven API that's tricky to work with and is somewhat inefficient (3X slower than Java AMQP client).
 
 EVALUATION: A good choice for sophisticated message queuing.
 
