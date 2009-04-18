@@ -8,9 +8,9 @@ A powerful, sophisticated and modern standards-based message broker and messagin
 
 Websites: [RabbitMQ server](http://www.rabbitmq.com/) and [Ruby 'tmm1-amqp' client](http://github.com/tmm1/amqp/tree/master).
 
-PROS: Many compatible clients and servers. Scalable queue servers. Many subscription options.
+PROS: Many compatible clients and servers. Clusterable queue servers. Many subscription options. Multiple protocols (AMQP, STOMP, SMTP, etc).
 
-CONS: Slower than most brokers. Client code is harder to write than other alternatives due to EventMachine-based client and additional complexity supported by protocol and broker.
+CONS: The RabbitMQ server is fine, but the tmm1-amqp client is slow (3X slower than Java AMQP client) and its event-driven API is tricky to work with.
 
 EVALUATION: A good choice for sophisticated message queuing.
 
